@@ -1,3 +1,3 @@
-# This is a base branch
+# Blog Nvidia
 
-Check all of my pucpr projects in this repo branches
+Blog based on NVIDIA company made with HTML, CSS and JS using Bootstrap 5
