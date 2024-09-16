@@ -8,7 +8,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
-    console.log('Log deve ser mantido!');
+    console.log('Log deve ser mantido! - alteração deverá ser descartada!');
     if (email === 'eduardo.lino@pucpr.br' && password === '123456') {
       setMessage('Acessado com sucesso!');
       setIsAuthenticated(true);
@@ -16,13 +16,16 @@ function App() {
       setMessage('Usuário ou senha incorretos!');
       setIsAuthenticated(false);
     }
+    console.log('Log QUE deve ser descartado!');
   };
 
   return (
     <div className='login'>
-      <h3 className='login__title'>Login</h3>
+      <h3 className='login__title'>
+        Login ALTERAÇÃO QUE DEVERÁ SER DESCARTADA!!!!!!!
+      </h3>
 
-      <div className='login__form'>
+      <div className='login__form test'>
         <input
           type='email'
           placeholder='Email'
