@@ -1,23 +1,55 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleLogin = () => {
+    if (email === 'eduardo.lino@pucpr.br' && password === '123456') {
+      setMessage('Acessado com sucesso!');
+      setIsAuthenticated(true);
+    } else {
+      setMessage('Usuário ou senha incorretos!');
+      setIsAuthenticated(false);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className='login'>
+      <h3 className='login__title'>Login</h3>
+
+      <div className='login__form'>
+        <input
+          type='email'
+          placeholder='Email'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className='login__input'
+        />
+        <input
+          type='password'
+          placeholder='Senha'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className='login__input'
+        />
+      </div>
+
+      <button onClick={handleLogin} className='login__button'>
+        Acessar
+      </button>
+      {message && (
+        <p
+          className={`login__mesage login__message--${
+            isAuthenticated ? 'success' : 'error'
+          }`}
         >
-          Learn React
-        </a>
-      </header>
+          {message}
+        </p>
+      )}
     </div>
   );
 }
