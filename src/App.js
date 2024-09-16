@@ -8,6 +8,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
+    console.log('Log deve ser mantido!');
     if (email === 'eduardo.lino@pucpr.br' && password === '123456') {
       setMessage('Acessado com sucesso!');
       setIsAuthenticated(true);
